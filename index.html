@@ -36,18 +36,57 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1>Hi, I'm <span class="gradient-text">Myco Cabasag</span><br>Information Technology Student</h1>
-                <p>A motivated and adaptable college student eager to apply my skills in a professional setting. Passionate about problem-solving, collaboration, and continuous learning.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn primary-btn">Contact Me</a>
-                    <a href="#projects" class="btn outline-btn">View My Work</a>
+   <!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-container">
+        <div class="hero-content" data-aos="fade-up">
+            <div class="profile-image">
+                <img src="images/profile.png" alt="Myco Cabasag">
+            </div>
+            <h1>Hi, I'm <span class="gradient-text">Myco Cabasag</span></h1>
+            <p class="hero-subtitle">Information Technology Student</p>
+            <p class="hero-description">Passionate about creating innovative solutions through technology</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn primary-btn">Contact Me</a>
+                <a href="#projects" class="btn outline-btn">View My Work</a>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <div class="mouse"></div>
+        <p>Scroll Down</p>
+    </div>
+</section>
+
+<!-- Project Modal -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+            <h2 id="modalTitle" class="gradient-text"></h2>
+            <div id="modalImage" class="modal-image"></div>
+            <div class="modal-details">
+                <div class="role-section">
+                    <h3>Role</h3>
+                    <p id="modalRole"></p>
+                </div>
+                <div class="description-section">
+                    <h3>Description</h3>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="responsibilities-section">
+                    <h3>Responsibilities</h3>
+                    <ul id="modalResponsibilities"></ul>
+                </div>
+                <div class="technologies-section">
+                    <h3>Technologies Used</h3>
+                    <div id="modalTechnologies" class="project-tech"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
     <!-- About Section -->
     <section id="about">
@@ -141,43 +180,46 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card" data-aos="flip-left">
-                    <div class="project-img">
-                        <img src="images/ocrs-project.jpg" alt="OCRS Website">
-                    </div>
-                    <div class="project-content">
-                        <h3>OCRS Website</h3>
-                        <p>A real-time platform for reporting and resolving community issues in Barangay Sto. Niño, Parañaque City.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Hostinger</span>
-                            <span class="tech-tag">Google Maps API</span>
-                        </div>
-                    </div>
+   <!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card" data-aos="flip-left" data-project="ocrs">
+                <div class="project-img">
+                    <img src="images/ocrs-project.jpg" alt="OCRS Website">
                 </div>
-                <div class="project-card" data-aos="flip-right">
-                    <div class="project-img">
-                        <img src="images/instabank-project.jpg" alt="Instabank App">
+                <div class="project-content">
+                    <h3>OCRS Website</h3>
+                    <p>A real-time platform for reporting and resolving community issues in Barangay Sto. Niño, Parañaque City.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Hostinger</span>
+                        <span class="tech-tag">Google Maps API</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Instabank – E-Wallet App</h3>
-                        <p>A functional e-wallet prototype enabling real-time account transfers using Firebase Database.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Android Studio</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Java</span>
-                        </div>
+                    <button class="btn primary-btn view-project">View Details</button>
+                </div>
+            </div>
+            <div class="project-card" data-aos="flip-right" data-project="instabank">
+                <div class="project-img">
+                    <img src="images/instabank-project.jpg" alt="Instabank App">
+                </div>
+                <div class="project-content">
+                    <h3>Instabank – E-Wallet App</h3>
+                    <p>A functional e-wallet prototype enabling real-time account transfers using Firebase Database.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Android Studio</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Java</span>
                     </div>
+                    <button class="btn primary-btn view-project">View Details</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+    
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
