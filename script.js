@@ -111,6 +111,96 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Project Modal Functionality
+const projectData = {
+    ocrs: {
+        title: "OCRS Website",
+        image: "images/ocrs-project.jpg",
+        role: "Project Leader & Research Lead",
+        description: "A real-time platform for reporting and resolving community issues in Barangay Sto. Niño, Parañaque City. The system integrates Google Maps API for precise location reporting and features a comprehensive dashboard for both residents and barangay officials.",
+        responsibilities: [
+            "Led the development team and managed project timeline",
+            "Conducted research and requirements gathering with stakeholders",
+            "Developed backend APIs and database architecture",
+            "Implemented frontend features and user interface",
+            "Coordinated with Barangay officials for deployment",
+            "Managed hosting and database setup on Hostinger"
+        ],
+        technologies: ["MySQL", "PHP", "JavaScript", "Google Maps API", "Hostinger", "HTML/CSS", "Bootstrap"]
+    },
+    instabank: {
+        title: "Instabank – E-Wallet App",
+        image: "images/instabank-project.jpg",
+        role: "Lead Developer",
+        description: "A functional e-wallet prototype that enables real-time account transfers using Firebase Database. The app features secure authentication, real-time balance updates, and transaction history tracking.",
+        responsibilities: [
+            "Designed and implemented the app architecture",
+            "Developed core functionality for money transfers",
+            "Integrated Firebase for real-time data synchronization",
+            "Implemented user authentication and security features",
+            "Created intuitive user interface designs",
+            "Conducted testing and bug fixes"
+        ],
+        technologies: ["Android Studio", "Java", "Firebase", "XML", "Material Design"]
+    }
+};
+
+// Modal Elements
+const modal = document.getElementById('projectModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalImage = document.getElementById('modalImage');
+const modalRole = document.getElementById('modalRole');
+const modalDescription = document.getElementById('modalDescription');
+const modalResponsibilities = document.getElementById('modalResponsibilities');
+const modalTechnologies = document.getElementById('modalTechnologies');
+const closeModal = document.querySelector('.close-modal');
+
+// Open Modal
+document.querySelectorAll('.view-project').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const projectCard = e.target.closest('.project-card');
+        const projectId = projectCard.dataset.project;
+        const project = projectData[projectId];
+
+        modalTitle.textContent = project.title;
+        modalImage.innerHTML = `<img src="${project.image}" alt="${project.title}">`;
+        modalRole.textContent = project.role;
+        modalDescription.textContent = project.description;
+        
+        modalResponsibilities.innerHTML = project.responsibilities
+            .map(resp => `<li>${resp}</li>`)
+            .join('');
+        
+        modalTechnologies.innerHTML = project.technologies
+            .map(tech => `<span class="tech-tag">${tech}</span>`)
+            .join('');
+
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close Modal
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
 // Form Submission
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
